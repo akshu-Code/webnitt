@@ -1,39 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>PGFinders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-200 ">
-    <div > 
-        <div class="flex py-2 bg-blue-500 text-lg">
-            <nav class="flex m-2 space-x-8 px-16">
-                <a href="/">Home</a>
-                <a href="/contact">Contact</a>
-                <a href="/details">Details</a>
-            </nav>
-            <nav class="ml-auto m-2 space-x-8 mx-6">
-                <a href="/login">Login</a>
-                <a href="/signup">SignUp</a>
-            </nav>
-        </nav>
-        
-    </div >
-    {% block content %}
-    <h1 class="m-2 text-center text-white text-5xl bg-black py-5">INSTA MOBILE STORE</h1>
-    <div class="flex m-2 items-center px-3 h-screen space-x-20">
-        <div>
-        <img class="w-[200px] h-[300px] shadow-2xl rounded-md object-cover transform hover:scale-105 transition duration-300" src="{{ url_for('static', filename='Untitled design.png') }}" alt="not found">
-        
-        </div>
-        <img class="w-[250px] h-[300px] shadow-2xl rounded-md object-cover transform hover:scale-105 transition duration-300" src="https://images-cdn.ubuy.co.in/64c24ac1deecdc59323a1773-hp-15-6-ryzen-5-8gb-256gb-laptop-rose.jpg" alt="">
-        <img class="w-[200px] h-[300px] shadow-2xl rounded-md object-cover transform hover:scale-105 transition duration-300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5FyhKFiRoCdmrxbS5CDkACBhuak_CQjnhKg&s" alt="">
-        <img class="w-[250px] h-[300px] shadow-2xl rounded-md object-cover transform hover:scale-105 transition duration-300" src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25786621/247412_Apple_MacBook_Pro_16_M4_Max_ADiBenedetto_0003.jpg?quality=90&strip=all&crop=16.666666666667%2C0%2C66.666666666667%2C100&w=2400" alt="">
-        <img class="w-[200px] h-[300px] shadow-2xl rounded-md object-cover transform hover:scale-105 transition duration-300" src="https://image01-in.oneplus.net/media/202406/19/ec64eb41a8e787a798be1b71c13a51bb.png?x-amz-process=image/format,webp/quality,Q_80" alt="">
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-10 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-900">🏠 PGFinders</h1>
+
+    <div class="space-x-6 hidden md:block">
+      <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600">Listings</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600">List Your PG</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
     </div>
-    {% endblock  %}
-</div>
+
+    <a href="#" class="bg-blue-800 text-white px-4 py-2 rounded-lg">Contact Us</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-[400px] flex items-center justify-center text-center text-white"
+    style="background-image:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade'); background-size:cover; background-position:center;">
+
+    <div class="bg-black/50 absolute inset-0"></div>
+
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold mb-2">Find Your Ideal PG in Delhi</h1>
+      <p class="mb-5">Verified, Affordable, No Brokerage</p>
+
+      <div class="bg-white p-3 rounded-lg flex gap-2">
+        <input type="text" placeholder="Enter Location" class="p-2 border rounded w-40 text-black">
+        <input type="text" placeholder="Budget" class="p-2 border rounded w-32 text-black">
+        <button class="bg-blue-800 text-white px-6 rounded">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured PGs -->
+  <section class="p-10">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">Featured PGs</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Sunrise PG</h3>
+          <p class="text-gray-600">Laxmi Nagar, ₹8,000 / month</p>
+          <button class="mt-3 w-full bg-blue-800 text-white py-2 rounded">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Green Haven PG</h3>
+          <p class="text-gray-600">Saket, ₹10,500 / month</p>
+          <button class="mt-3 w-full bg-blue-800 text-white py-2 rounded">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Comfort Stay PG</h3>
+          <p class="text-gray-600">GTB Nagar, ₹7,500 / month</p>
+          <button class="mt-3 w-full bg-blue-800 text-white py-2 rounded">View Details</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="px-10 pb-10">
+    <h2 class="text-2xl font-bold text-blue-900 text-center mb-8">Why Choose PGFinders?</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">✔ Verified Listings</h3>
+        <p class="text-gray-600">Trusted & Safe PGs</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">💰 No Brokerage Fees</h3>
+        <p class="text-gray-600">Save on Extra Charges</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold text-lg">👍 Student Friendly</h3>
+        <p class="text-gray-600">Easy & Affordable</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-blue-900 text-white p-10 flex flex-col md:flex-row justify-between items-center">
+    
+    <div>
+      <h2 class="text-2xl font-bold mb-2">Contact Us</h2>
+      <p>Looking for the perfect PG?<br>We're here to help!</p>
+    </div>
+
+    <button class="mt-4 md:mt-0 bg-orange-500 px-6 py-3 rounded-lg text-white font-semibold">
+      Get in Touch
+    </button>
+
+  </section>
+
 </body>
 </html>

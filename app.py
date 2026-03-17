@@ -76,5 +76,9 @@ def signup():
 @app.route("/thankyou")
 def thankyou():
     return render_template("thankyou.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
     
 
