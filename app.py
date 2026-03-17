@@ -1,5 +1,7 @@
 from flask import Flask,redirect,session,url_for,flash,render_template,request
 from flask_sqlalchemy import SQLAlchemy
+import os
+
 
 app = Flask(__name__)
 app.secret_key = "akshitrana"
@@ -77,6 +79,9 @@ def signup():
 def thankyou():
     return render_template("thankyou.html")
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
     app.run(debug=True)
